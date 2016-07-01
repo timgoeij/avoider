@@ -6,10 +6,11 @@
     <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div>
+
+    <div id="game-container"></div>
+    <div id="button-holder">
         <div id="score-button">SCORE</div>
     </div>
-    <div id="game-container"></div>
     <div id="score-container" class="hide">
         <div id="dropdown-holder">
             <select id="nicknames">
@@ -20,7 +21,7 @@
                 </script>
             </select>
         </div>
-        <div id="AllScores">
+        <div id="AllScores" class="divs">
             <script id="templateAllScores" type="text/template">
             <h2>Scoreboard All Players</h2>
             <table id="AllScoreTable">
@@ -45,7 +46,7 @@
             </table>
             </script>
         </div>
-        <div id="AllScoresByNickname">
+        <div id="AllScoresByNickname" class="divs">>
             <script id="templateAllScoresByNickname" type="text/template">
                 <h2>Scorboad with scores from the player you search</h2>
             <table id="AllScoreByNicknameTable">
