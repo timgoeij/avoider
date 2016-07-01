@@ -15,3 +15,5 @@ overerving kan ik gebruiken voor de verschillende obstakels en de speler door ee
 Player 
 Obstacle -> SingleObstacle
 Obstacle -> DoubleObstacle
+
+een ding die ik boven beschreven heb, het wisselen tussen de game en de score was niet mogelijk doordat ik het framework phaser gebruikt heb
