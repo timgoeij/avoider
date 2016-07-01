@@ -1,9 +1,21 @@
 import SingleObstacle from './SingleObstacle'
 import DoubleObstacle from './DoubleObstacle'
 
-
+/**
+ * class obstacle generator that creates and deletes obstacles
+ * 
+ */
 class ObstacleGenerator
 {
+    /**
+     * create the obstacles
+     * 
+     * @param obstacleArray
+     * @param game
+     * @param obstacles
+     * @param direction
+     * @param speedExponential
+     */
     createObstacle(obstacleArray, game, obstacles, direction, speedExponential)
     {
         let rand = Math.random();
@@ -18,6 +30,12 @@ class ObstacleGenerator
         }
     }
 
+    /**
+     * delete the obstacle
+     * 
+     * @param obstacle
+     * @param obstacleArray
+     */
     deleteObstacle(obstacle, obstacleArray)
     {
         let index = obstacleArray.indexOf(obstacle);

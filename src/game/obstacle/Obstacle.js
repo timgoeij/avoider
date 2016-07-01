@@ -1,5 +1,19 @@
+/**
+ * Base class of the obstacles
+ * 
+ */
 class Obstacle
 {
+    /**
+     * initialize obstacle
+     * 
+     * @constructor
+     * @param parent
+     * @param imgKey
+     * @param goingLeftOrRight
+     * @param speedExponential
+     * @param game
+     */
     constructor(parent, imgKey, goingLeftOrRight, speedExponential, game)
     {
         this.parent = parent;
@@ -13,6 +27,11 @@ class Obstacle
         this.speedExponential = speedExponential;
     }
 
+    /**
+     * Update the obstacle
+     * 
+     * @param gameClass
+     */
     update(gameClass)
     {
         if(this.direction == "right")
@@ -41,7 +60,13 @@ class Obstacle
         if(this.dead)
             this.sprite.kill();
     }
-    
+
+    /**
+     * Create a obstacle
+     * 
+     * @param double
+     * @returns {*}
+     */
     createObstacle( double)
     {
         let sprite = null;

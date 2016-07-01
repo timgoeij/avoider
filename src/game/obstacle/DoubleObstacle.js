@@ -1,7 +1,15 @@
 import Obstacle from "./Obstacle";
 
+/**
+ * class double obstacle
+ * 
+ */
 class DoubleObstacle extends Obstacle
 {
+    /**
+     * class initialize obstacle and creates a extra obstacle
+     *
+     */
     constructor(parent, imgKey, goingLeftOrRight, speedExponential, game)
     {
         super(parent, imgKey, goingLeftOrRight, speedExponential, game);
@@ -9,6 +17,11 @@ class DoubleObstacle extends Obstacle
         this.doubleSprite = this.createObstacle(true);
     }
 
+    /**
+     * Update the obstacle and the extra obstacle
+     * 
+     * @param gameClass
+     */
     update(gameClass)
     {
         super.update(gameClass);

@@ -1,7 +1,15 @@
 import Phaser from 'phaser'
 
+/**
+ * Class player, the player in the game
+ */
 class Player
 {
+    /**
+     * initialize the player
+     * 
+     * @param game
+     */
     constructor(game)
     {
         this.gameInstance = game;
@@ -16,7 +24,11 @@ class Player
 
         this.dead = false;
     }
-    
+
+    /**
+     * update the player
+     * 
+     */
     update()
     {
         let keys =  this.gameInstance.input.keyboard.createCursorKeys();

@@ -4,10 +4,20 @@ import ObstacleGenerator from './obstacle/ObstacleGenerator'
 import Button from './UI/Button'
 import Label from './UI/Label'
 
+/**
+ * this the game class with the game inside
+ * 
+ */
 class Game
 {
+    /**
+     * intialize the variables to use in the class
+     * 
+     * @constructor
+     */
     constructor()
     {
+        //initialize Phaser
         this.game = new Phaser.Game(1200, 300, Phaser.AUTO, 'game-container',{preload: this.preload, create: this.create, update: this.update });
         this.player = null;
 
@@ -26,11 +36,15 @@ class Game
         this.endButton = null;
         
         this.scoreField = null;
-        this.inputField = null
+        this.inputField = null;
         
         this.gameState = "";
     }
 
+    /**
+     * Create all sprites for the game and initialize variables to use in phaser
+     * 
+     */
     create()
     {
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -59,6 +73,10 @@ class Game
         this.gameState = "START";
     }
 
+    /**
+     * load images in the game and change the color of the background
+     * 
+     */
     preload()
     {
         this.game.stage.backgroundColor = "#FFFFFF";
@@ -66,7 +84,11 @@ class Game
         this.game.load.images(["player", "obstacle", "startButton", "scoreButton"], 
             ["img/player.png", "img/wal.png", "img/start.png", "img/send.png"]);
     }
-    
+
+    /**
+     * Update function to update the game
+     * 
+     */
     update()
     {
         switch(this.gameState)
