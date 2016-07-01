@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>avoider</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div>
+        <div id="score-button">SCORE</div>
+    </div>
+    <div id="game-container"></div>
+    <div id="score-container" class="hide">
+        <div id="dropdown-holder">
+            <select id="nicknames">
+                <script id="templateNicknames" type="text/template">
+                    <% _.each(nicknames, function(nickname, index, list) {%>
+                        <option value="<%= nickname.get('nickname') %>"><%= nickname.get('nickname') %></option>
+                    <% }); %>
+                </script>
+            </select>
+        </div>
+        <div id="AllScores">
+            <script id="templateAllScores" type="text/template">
+            <h2>Scoreboard All Players</h2>
+            <table id="AllScoreTable">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Nickname</th>
+                        <th>Score</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% _.each(scores, function(score, index, list) {%>
+                        <tr>
+                            <td><%= index %></td>
+                            <td><%= score.get('nickname')%></td>
+                            <td><%= score.get('score')%></td>
+                            <td><%= score.get('date')%></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+            </script>
+        </div>
+        <div id="AllScoresByNickname">
+            <script id="templateAllScoresByNickname" type="text/template">
+                <h2>Scorboad with scores from the player you search</h2>
+            <table id="AllScoreByNicknameTable">
+                <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Nickname</th>
+                    <th>Score</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                    <% _.each(scores, function(score, index, list) {%>
+                        <tr>
+                            <td><%= index %></td>
+                            <td><%= score.get('nickname')%></td>
+                            <td><%= score.get('score')%></td>
+                            <td><%= score.get('date')%></td>
+                        </tr>
+                    <% }); %>
+
+                </tbody>
+            </table>
+            </script>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="dist/bundle.js"></script>
+</body>
+</html>
